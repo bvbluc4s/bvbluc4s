@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Lucas Lopes">
+    <meta name="description" content="Our Little Fried Chicken Store: Contact Us">
+    <link rel="icon" href="img/favicon-chicken.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <title>Contact Us - LFCS</title>
+</head>
+
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav aria-label="primary-navigation">
+            <ul>
+                <li>
+                    <a href="/final project/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/final project/#aboutlfcs">About LFCS</a>
+                </li>
+                <li>
+                    <a href="/final project/#ourMenu">Our Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Store Hours</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article id="contactus">
+            <figure>
+                <img src="img/chicken3.png" alt="Beautiful Tender Chicken" title="Beautiful Tender Chicken">
+                <figcaption>Beautiful Tender Chicken</figcaption>
+            </figure>
+            <h2>Our Contact Form</h2>
+            <form action="https://httpbin.org/get" method="get">
+                <fieldset>
+                    <legend>Send Us A Message</legend>
+                    <p>
+                        <label for="fname">Name:</label>
+                        <input type="text" name="fname" id="fname" autocomplete="on" placeholder="Your Name" required>
+                    </p>
+                    <p>
+                        <label for="uemail">Email:</label>
+                        <input type="email" name="uemail" id="uemail" autocomplete="on" placeholder="Your Email"
+                            required>
+                    </p>
+                    <label for="message">Your Message:</label>
+                    <br>
+                    <textarea name="message" id="message" cols="30" rows="10"
+                        placeholder="Type Your Message Here"></textarea>
+                </fieldset>
+            </form>
+            <p>
+                <button type="submit">Submit</button> <button type="reset">Reset</button>
+            </p>
+        </article>
+        <div id="ourlocation">
+            <h2>Our Location</h2>
+            <address>
+                555 Chicken Temptation Lane, Suite C<br>
+                New York City, CW 55555-5555
+            </address>
+            <p><em>Phone</em>: <a href="tel:555-555-5555">555-555-5555</a></p>
+
+        </div>
+    </main>
+    <footer>
+        <a href="#">Back To Top</a>
+        <hr>
+        <p>Copyright &copy; The Little Fried Chicken Shop</p>
+    </footer>
+</body>
+
+</html>
