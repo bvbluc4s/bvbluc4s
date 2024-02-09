@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Our Little Fried Chicken Store: Contact Us">
+    <link rel="icon" href="img/favicon-chicken.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <title>Contact Us - LFCS</title>
+    <script src="js/main.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__h1">Contact Us</h1>
+        <nav class="header__nav" aria-label="primary-navigation">
+            <ul class="header__ul">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="index.html#aboutlfcs">About</a>
+                </li>
+                <li>
+                    <a href="index.html#ourMenu">Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Hours</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article id="contactus">
+        <section class="hero">
+            <figure>
+                <img src="img/chicken3.png" alt="Beautiful Tender Chicken" title="Beautiful Tender Chicken">
+                <figcaption class="offscreen">Beautiful Tender Chicken</figcaption>
+            </figure>
+        </section>
+        <article id="main__article">
+            <main class="main">
+                <h2>Our Location</h2>
+                <address>
+                    555 Chicken Temptation Lane, Suite C<br>
+                    New York City, CW 55555-5555
+                    <p><em>Phone</em>: <a href="tel:555-555-5555">555-555-5555</a></p>
+                </address>
+                <hr>
+        </article>
+        <article class="main__article__contact">
+            <h2 class="contact__h2">Our Contact Form</h2>
+            <form action="https://httpbin.org/get" method="get" class="contact__form">
+                <fieldset class="contact__fieldset">
+                    <legend class="offscreen">Send Us A Message</legend>
+                    <p class="contact__p">
+                        <label class="contact__label" for="fname">Name:</label>
+                        <input class="contact__input" type="text" name="fname" id="fname" autocomplete="on"
+                            placeholder="Your Name" required>
+                    </p>
+                    <p class="contact__p">
+                        <label class="contact__label" for="uemail">Email:</label>
+                        <input class="contact__input" type="email" name="uemail" id="uemail" autocomplete="on"
+                            placeholder="Your Email" required>
+                    </p>
+                    <p class="contact__p">
+                        <label class="contact__label" for="message">Your Message:</label>
+                        <br>
+                        <textarea class="contact__textarea" name="message" id="message" cols="30" rows="10"
+                            placeholder="Type Your Message Here"></textarea>
+                    </p>
+                </fieldset>
+            </form>
+        </article>
+        <section>
+            <p>
+                <button class="contact__button" type="submit">Submit</button> <button class="contact__button"
+                    type="reset">Reset</button>
+            </p>
+    </article>
+    </main>
+    <a href="#">Back To Top</a>
+    <hr>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">Little Fried Chicken Shop</span>
+        </p>
+    </footer>
+</body>
+
+</html>
