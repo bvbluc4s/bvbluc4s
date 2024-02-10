@@ -1,28 +1,25 @@
-// variables
-let cont = 0
+// Variables
+const increaseButton = window.document.getElementById('increase');
+const decreaseButton = window.document.getElementById('decrease');
+let counterText = window.document.getElementById('counterNum');
+counterText.innerHTML = 0
+let birle = 0
 
-const increaseButton = window.document.getElementById('increase')
-const decreaseButton = window.document.getElementById('decrease')
-const display = window.document.getElementById('counterNum')
-const clearThat = window.document.getElementById('clear')
 
-// functions
+// Functions
 
-function increase() {
-    cont += 1
-    display.innerHTML = cont
-    console.log("Added!")
+function increaseIt() {
+    birle += 1
+    counterText.innerHTML = birle
+
 }
 
-function decrease() {
-    cont -= 1
-    display.innerHTML = cont
-    console.log("Subtracted!")
+function decreaseIt() {
+    birle -= 1
+    counterText.innerHTML = birle
 }
 
 function cleanIt() {
-    cont = 0
-    display.innerHTML = cont
-    console.log("Resetted!")
+    birle = 0
+    counterText.innerHTML = birle
 }
-
