@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    outline: none;
+}
+
+body {
+    background: url("img/background.png") no-repeat;
+    background-size: cover;
+}
+
+.container {
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: .5rem;
+    padding: 2rem;
+    margin: 100px auto 0;
+}
+
+img {
+    height: 25px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+
+img:active {
+    transform: scale(0.95);
+}
+
+.input-task {
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: 300px;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-task::selection {
+    background-color: rgb(8, 77, 8);
+    color: white;
+}
+
+.add-button {
+    padding: 0.5rem;
+    border-radius: .5rem;
+    margin-left: 40px;
+    font-weight: 700;
+}
+
+.add-button:hover, 
+add-button:focus {
+    border: 2px solid rgb(20, 119, 0);
+    background-color: #b6ffc2;
+    cursor: pointer;
+
+}
+
+.add-button:active {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.task-list {
+    list-style: none;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: .5rem;
+
+}
+
+.task {
+    background-color: #f2f2f2;
+    border-radius: .5rem;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+    transition: transform 0.2s ease;
+    margin-bottom: 10px;
+}
+
+.task p::selection {
+    background-color: rgb(8, 77, 8);
+    color: white;
+}
+
+.task:hover img {
+    opacity: 1;
+}
+
+.task:hover {
+    transform: scale(1.1);
+}
+
+.done {
+    background-color: #8fac55;
+    text-decoration: line-through;
+}
