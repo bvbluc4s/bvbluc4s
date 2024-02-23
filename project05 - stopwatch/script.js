@@ -3,7 +3,7 @@
 const theTime = window.document.getElementById("swTime");
 const firstSideButton = window.document.getElementById("sideButton1"); // Stop Button
 const secondSideButton = window.document.getElementById("sideButton2"); // Reset Button
-const theStartButton = window.document.getElementById("startButton");
+const theStartButton = window.document.getElementById("startButton"); // Start Button
 let [seconds, minutes, hours] = [0, 0, 0];
 let timer = null;
 
@@ -19,6 +19,7 @@ function stopwatch() {
             hours++;
         }
     };
+
     theTime.innerHTML = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
 }
 
