@@ -90,3 +90,8 @@ secondSideButton.addEventListener("click", () => {
         console.log(theTimeSpent.textContent);
     }
 });
+
+// Event listener for the stop button
+firstSideButton.addEventListener("click", () => {
+    stop(); // Call the stop function
+});
