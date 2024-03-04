@@ -1,4 +1,5 @@
 // Variables
+const theClosebutton = window.document.getElementById("closeButton");
 const theTimeSpent = window.document.getElementById("timeSpent");
 const trackerOverlay = window.document.getElementById("offscreenTracker");
 const hamMenu = window.document.getElementById("ham-Menoo");
@@ -69,6 +70,12 @@ function stop() {
     clearInterval(timer)
 }
 
+function closePopUp() {
+    trackerOverlay.style.display = "none";
+}
+
+
+
 // Event Listeners
 hamMenu.addEventListener("click", () => {
     hamMenu.classList.toggle('active');
@@ -94,4 +101,8 @@ secondSideButton.addEventListener("click", () => {
 // Event listener for the stop button
 firstSideButton.addEventListener("click", () => {
     stop(); // Call the stop function
+});
+
+theClosebutton.addEventListener("click", () => {
+    closePopUp();
 });
