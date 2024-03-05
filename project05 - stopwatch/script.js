@@ -139,7 +139,6 @@ theClosebutton.addEventListener("click", () => {
 // EVENT LISTENERS PT 2
 
 theOkayButton.addEventListener("click", () => {
-    window.alert("Deu bom!")
 });
 
 theDontShowButton.addEventListener("click", () => {
