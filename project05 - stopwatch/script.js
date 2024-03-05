@@ -1,4 +1,4 @@
-// Variables
+// Variables pt 1
 const theClosebutton = window.document.getElementById("closeButton");
 const theTimeSpent = window.document.getElementById("timeSpent");
 const trackerOverlay = window.document.getElementById("offscreenTracker");
@@ -11,6 +11,14 @@ const theStartButton = window.document.getElementById("startButton"); // Start B
 let [seconds, minutes, hours] = [0, 0, 0];
 let timer = null;
 let isClicked = false;
+
+// Variables pt 2
+
+const theOkayButton = window.document.getElementById("okayButton");
+const theDontShowButton = window.document.getElementById("dontShowButton");
+let dontShowIsClicked = false;
+let xWasClicked = false;
+
 
 // Functions
 function stopwatch() {
@@ -71,12 +79,24 @@ function stop() {
 }
 
 function closePopUp() {
+    trackerOverlay.style.display = "hidden";
+}
+
+function closePopUpDontShow() {
     trackerOverlay.style.display = "none";
 }
 
+// Functions pt 2 🤖
+
+function dontShowAgainpt1() {
+    dontShowIsClicked = true;
+
+}
 
 
 // Event Listeners
+
+// Menu Event Listener
 hamMenu.addEventListener("click", () => {
     hamMenu.classList.toggle('active');
     offscreenMenu.classList.toggle('active');
@@ -91,6 +111,7 @@ firstSideButton.addEventListener("click", () => {
 
 // Event listener for the reset button
 secondSideButton.addEventListener("click", () => {
+    console.log("Reset Button clicked")
     if (isClicked) {
         reset();
         trackerOverlay.style.visibility = "visible";
@@ -104,5 +125,24 @@ firstSideButton.addEventListener("click", () => {
 });
 
 theClosebutton.addEventListener("click", () => {
-    closePopUp();
+    if (dontShowIsClicked === false) {
+        console.log("Close overlay clicked!")
+        closePopUp();
+        trackerOverlay.style.visibility = "hidden";
+        xWasClicked = true;
+    } else {
+        closePopUpDontShow();
+        trackerOverlay.style.visibility = "hidden";
+    }
+});
+
+// EVENT LISTENERS PT 2
+
+theOkayButton.addEventListener("click", () => {
+    window.alert("Deu bom!")
+});
+
+theDontShowButton.addEventListener("click", () => {
+    dontShowAgainpt1();
+    window.alert("Understood! The overlay won't be displayed again. Click on the X to close the overlay permanently.")
 });

@@ -9,17 +9,26 @@
     <script src="script.js" defer></script>
 </head>
 <body>  
-    <div class="offscreen-tracker" id="offscreenTracker">
-        <span class="close" id="closeButton">&times;</span>
-        <h1 class="iSpent">I spent <span id="timeSpent"></span><input type="text" id="activity"></h1>
-    </div>
-
 
     <div class="offscreen-menu" id="offscreen-menoo">
         <ul>
-            <li>WIP</li>
+            <li>WIP!!</li>
         </ul>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </label>
     </div>
+
+    <div class="offscreen-tracker" id="offscreenTracker">
+        <span class="close" id="closeButton">&times;</span>
+        <h1 class="iSpent">I spent <span id="timeSpent"></span><input type="text" id="activity" autocomplete="off"></h1>
+        <span class="dontShow" id="dontShowButton">Don't show again</span>
+        <span class="okay" id="okayButton">Ok</span>
+    </div>
+
+
+    
 
     <nav>
         <div class="ham-menu" id="ham-Menoo">

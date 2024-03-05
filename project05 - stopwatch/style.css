@@ -4,8 +4,13 @@ body {
     background: #edeaff;
     background-image: linear-gradient(to right, rgb(0, 74, 104), rgb(0, 99, 44));
     height: 100vh;
+    overflow: hidden;
 }
 
+:root { 
+    --green1: hsla(120, 100%, 93%, 0.664);
+
+}
 
 .offscreen-tracker {
     color: white;
@@ -17,7 +22,7 @@ body {
     border-radius: .5rem;
     width: 100%;
     margin: auto;
-    position: fixed;
+    position: absolute;
     visibility: hidden;
     top: 0;
     bottom: 0;
@@ -47,9 +52,10 @@ body {
     max-width: 450px;
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     text-align: center;
     font-size: 3rem;
     transition: .3s ease;
@@ -65,6 +71,58 @@ body {
 .offscreen-menu ul {
     list-style-type: none;
 }
+
+
+ /* Switch */
+
+ /* .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+ }
+
+ .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+    border: 1px solid #fff;
+
+ }
+
+ .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+ }
+
+ input:checked + .slider {
+    background-color: hwb(104 11% 59%);
+ }
+
+ input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+ }
+
+ input {
+    display: none;
+ } */
 
 nav {
     padding: 1rem;
@@ -149,12 +207,54 @@ nav {
 .offscreen-tracker .close {
     font-size: 3rem;
     display: absolute;
-    margin-right: 50px; 
+    margin-right: -50px; 
+    margin-bottom: 250px;
+    padding: 0 1rem;
     transition: transform 0.3s ease;
+    border-radius: 90%;
+    background-color: #3333337e;
+    border: 1px solid #fff;
 }
 
 .offscreen-menu, .close:hover {
-    color: hsla(120, 100%, 93%, 0.664);
+    color: var(--green1);
     cursor: pointer;
-    transform: scale(1.5);
+    transform: scale(1.2);
+}
+
+
+.dontShow {
+    position: absolute;
+    transition: transform 0.3s ease;
+    padding: 2rem;
+    bottom: 330px;
+    right: auto;
+    background-color: hwb(152 13% 56%);
+    border-radius: 0.5rem;
+    border: 1px solid #fff;
+    
+}
+
+.dontShow:hover {
+    cursor: pointer;
+    background-color: hwb(128 0% 67%);
+}
+
+.dontShow:active {
+    background-color: hwb(152 11% 33%);
+}
+
+.okay {
+    cursor: pointer;
+    background-color: hwb(152 13% 56%);
+    padding: 1rem;
+    margin-left: 25px;
+    border: 1px solid #fff;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+}
+
+.okay:hover {
+    background-color: hwb(128 0% 67%);
+
 }
