@@ -16,6 +16,7 @@ let isClicked = false;
 
 const theOkayButton = window.document.getElementById("okayButton");
 const theDontShowButton = window.document.getElementById("dontShowButton");
+const mySwitch = window.document.getElementById("mySwitch");
 let dontShowIsClicked = false;
 let xWasClicked = false;
 
@@ -129,7 +130,7 @@ theClosebutton.addEventListener("click", () => {
         console.log("Close overlay clicked!")
         closePopUp();
         trackerOverlay.style.visibility = "hidden";
-        xWasClicked = true;
+        /* xWasClicked = true; */
     } else {
         closePopUpDontShow();
         trackerOverlay.style.visibility = "hidden";
@@ -143,5 +144,19 @@ theOkayButton.addEventListener("click", () => {
 
 theDontShowButton.addEventListener("click", () => {
     dontShowAgainpt1();
-    window.alert("Understood! The overlay won't be displayed again. Click on the X to close the overlay permanently.")
+    mySwitch.checked = false;
+    window.alert("The overlay will no longer be displayed. Click on the X to permanently close the overlay. You can re-enable it in the settings menu.")
+
+});
+
+mySwitch.addEventListener("click", () => {
+    if (mySwitch.checked) {
+        trackerOverlay.style.visibility = "hidden";
+        trackerOverlay.style.display = "flex";
+    } else {
+        dontShowAgainpt1();
+        dontShowIsClicked = false;
+        trackerOverlay.style.visibility = "hidden";
+        trackerOverlay.style.display = "none";
+    }
 });
