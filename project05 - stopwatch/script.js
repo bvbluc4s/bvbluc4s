@@ -22,6 +22,11 @@ let xWasClicked = false;
 
 
 // Functions
+
+function updateTabTitle() {
+    document.title = `${(hours < 10 ? "0" + hours : hours)}:${(minutes < 10 ? "0" + minutes : minutes)}:${(seconds < 10 ? "0" + seconds : seconds)} - Stopwatch`;
+}
+
 function stopwatch() {
     seconds++;
     if (seconds == 60) {
@@ -34,6 +39,7 @@ function stopwatch() {
     };
 
     theTime.innerHTML = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
+    updateTabTitle();
 }
 
 function watchStart() {
@@ -46,32 +52,17 @@ function watchStart() {
 
 function reset() {
     console.log("Reset function called.");
-
-    // Store the current stopwatch value
     const currentTime = `${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
-    console.log("Current time:", currentTime);
-
-    // Log the previous content of theTimeSpent
-    console.log("Previous content of theTimeSpent:", theTimeSpent.textContent);
-
-    // Update the display with the current stopwatch value
     theTimeSpent.textContent = currentTime;
     console.log("Updated content of theTimeSpent:", theTimeSpent.textContent);
-
-    // Make the trackerOverlay visible
     trackerOverlay.style.visibility = "visible";
 
     if (timer) {
         clearInterval(timer);
     }
 
-    // Reset the timer
     timer = null;
-
-    // Reset the values of hours, minutes, and seconds
     [seconds, minutes, hours] = [0, 0, 0];
-
-    // Update the display to show 00:00:00
     theTime.innerHTML = `00:00:00`;
 }
 
@@ -94,11 +85,17 @@ function dontShowAgainpt1() {
 
 }
 
-function clearList() {
+function cleanList() {
     while (activityList.firstChild) {
         activityList.removeChild(activityList.firstChild);
     }
 }
+
+function saveActivities() {
+    localStorage.setItem('activities', activityList.innerHTML);
+}
+
+
 
 
 // Event Listeners
@@ -175,8 +172,6 @@ let currentTime;
 let activityValue;
 const trashbinIcon = window.document.getElementById("trashbin-icon");
 
-// Functions
-
 // Event Listeners
 
 theOkayButton.addEventListener("click", () => {
@@ -187,6 +182,7 @@ theOkayButton.addEventListener("click", () => {
     activityList.appendChild(newActivityItem);
     activityInput.value = "";
     trackerOverlay.style.visibility = "hidden";
+    saveActivities();
 });
 
 activityInput.addEventListener("keypress", function (event) {
@@ -199,11 +195,20 @@ activityInput.addEventListener("keypress", function (event) {
             newActivityItem.textContent = `${currentTime} - ${activityValue}`;
             activityList.appendChild(newActivityItem);
             activityInput.value = "";
-            console.log(activityList);
+            saveActivities();
         }
     }
 });
 
-trashbinIcon.addEventListener("click", () => {
-    clearList();
+document.addEventListener('DOMContentLoaded', () => {
+    const storedActivities = localStorage.getItem('activities');
+    if (storedActivities) {
+        activityList.innerHTML = storedActivities;
+    }
 });
+
+trashbinIcon.addEventListener("click", () => {
+    cleanList();
+})
+
+updateTabTitle();
