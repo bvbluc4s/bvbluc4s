@@ -46,7 +46,8 @@ body {
 
 
 .offscreen-menu {
-    background-color: hsl(214, 43%, 45%);
+    /* background-color: hsl(214, 43%, 45%); */
+    background-color: rgb(32, 95, 92);
     height: 100vh;
     width: 100%;
     max-width: 450px;
@@ -61,16 +62,50 @@ body {
     transition: .3s ease;
     border: 1px solid hsl(0, 0%, 100%, 0.5);
     color: #fff;
+    cursor:auto;
+
+}
+
+.offscreen-menu .theItems {
+    color: white;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    height: 75%;
 
 }
 
 .offscreen-menu.active {
     right: 0;
+    cursor: auto;
 }
 
 .offscreen-menu ul {
     list-style-type: none;
 }
+
+.offscreen-menu .offscreen-buttons .trashbin-icon {
+    position: absolute;
+    padding: 1rem;
+    right: 50px;
+    bottom: 83px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 25%;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+
+}
+
+.offscreen-menu .offscreen-buttons .trashbin-icon:hover {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+}
+
+.offscreen-menu .offscreen-buttons .trashbin-icon:active {
+    transform: scale(0.95);
+}
+
 
 /* Switch */
 
@@ -127,11 +162,9 @@ input:checked + .slider:before {
 
 .switch-text {
     margin-left: 20px;
-     
     font-size: 25px;
     color: white;
 }
-
 
 nav {
     padding: 1rem;
@@ -213,6 +246,10 @@ nav {
     transform: scale(1.1);
 }
 
+.buttons img:active {
+    transform: scale(0.95);
+}
+
 .offscreen-tracker .close {
     font-size: 3rem;
     display: absolute;
@@ -275,4 +312,20 @@ nav {
     margin-left: 20px;
     width: 200px;
     height: 10px;
+}
+
+.activityList li {
+    border: 2px solid hsla(0, 0%, 100%, 0.7);
+    color: rgb(255, 255, 255);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    margin-bottom: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    font-family: "Roboto", sans-serif;
+}
+
+.activityList li:hover {
+    transform: scale(1.02);
 }

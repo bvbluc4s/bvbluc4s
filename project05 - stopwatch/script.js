@@ -94,6 +94,12 @@ function dontShowAgainpt1() {
 
 }
 
+function clearList() {
+    while (activityList.firstChild) {
+        activityList.removeChild(activityList.firstChild);
+    }
+}
+
 
 // Event Listeners
 
@@ -129,8 +135,8 @@ theClosebutton.addEventListener("click", () => {
     if (dontShowIsClicked === false) {
         console.log("Close overlay clicked!")
         closePopUp();
+        activityInput.value = "";
         trackerOverlay.style.visibility = "hidden";
-        /* xWasClicked = true; */
     } else {
         closePopUpDontShow();
         trackerOverlay.style.visibility = "hidden";
@@ -138,9 +144,6 @@ theClosebutton.addEventListener("click", () => {
 });
 
 // EVENT LISTENERS PT 2
-
-theOkayButton.addEventListener("click", () => {
-});
 
 theDontShowButton.addEventListener("click", () => {
     dontShowAgainpt1();
@@ -159,4 +162,48 @@ mySwitch.addEventListener("click", () => {
         trackerOverlay.style.visibility = "hidden";
         trackerOverlay.style.display = "none";
     }
+});
+
+/* Final Feature */
+
+// Variables
+
+const divItems = window.document.querySelector(".theItems");
+const activityInput = window.document.getElementById("activity");
+const activityList = document.getElementById("activityList");
+let currentTime;
+let activityValue;
+const trashbinIcon = window.document.getElementById("trashbin-icon");
+
+// Functions
+
+// Event Listeners
+
+theOkayButton.addEventListener("click", () => {
+    const activityValue = activityInput.value;
+    const currentTime = theTimeSpent.innerHTML;
+    const newActivityItem = document.createElement("li");
+    newActivityItem.textContent = `${currentTime} - ${activityValue}`;
+    activityList.appendChild(newActivityItem);
+    activityInput.value = "";
+    trackerOverlay.style.visibility = "hidden";
+});
+
+activityInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        theOkayButton.click();
+
+        if (activityValue !== undefined && currentTime !== undefined) {
+            const newActivityItem = document.createElement("li");
+            newActivityItem.textContent = `${currentTime} - ${activityValue}`;
+            activityList.appendChild(newActivityItem);
+            activityInput.value = "";
+            console.log(activityList);
+        }
+    }
+});
+
+trashbinIcon.addEventListener("click", () => {
+    clearList();
 });
