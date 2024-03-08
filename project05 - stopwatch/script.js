@@ -209,6 +209,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 trashbinIcon.addEventListener("click", () => {
     cleanList();
-})
+});
 
 updateTabTitle();
